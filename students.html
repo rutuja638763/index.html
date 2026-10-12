@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management | Girls Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="students-page">
+    <header class="navbar">
+        <h2>🏠 Girls Hostel</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="students.html">Students</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="fees.html">Fees</a>
+            <a href="complaints.html">Complaints</a>
+        </nav>
+    </header>
+    <main class="students-container">
+        <section class="students-heading">
+            <h1>Student Management</h1>
+            <p>Add, edit, delete and search hostel students.</p>
+        </section>
+        <!-- Student Form -->
+        <section class="student-form-card">
+            <h2 id="formTitle">Add New Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+                <div class="student-form-grid">
+                    <div>
+                        <label for="studentName">Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter student name"
+                            required>
+                    </div>
+                    <div>
+                        <label for="studentEmail">Email</label>
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="Enter email address"
+                            required>
+                    </div>
+                    <div>
+                        <label for="studentPhone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="studentPhone"
+                            placeholder="10-digit phone number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required>
+                    </div>
+                    <div>
+                        <label for="roomNumber">Room Number</label>
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            placeholder="Example: A101"
+                            required>
+                    </div>
+                </div>
+                <div class="student-form-buttons">
+                    <button type="submit" id="saveButton">
+                        Add Student
+                    </button>
+                    <button
+                        type="button"
+                        id="cancelEditButton"
+                        class="cancel-button"
+                        hidden>
+                        Cancel Edit
+                    </button>
+                </div>
+                <p id="studentMessage" role="status"></p>
+            </form>
+        </section>
+        <!-- Student List -->
+        <section class="student-list-card">
+            <div class="student-list-heading">
+                <div>
+                    <h2>Student Records</h2>
+                    <p>All registered hostel students</p>
+                </div>
+                <input
+                    type="search"
+                    id="searchStudent"
+                    placeholder="Search students..."
+                    aria-label="Search students">
+            </div>
+            <div class="student-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Room Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td colspan="5">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="studentCount">Total Students: 0</p>
+        </section>
+    </main>
+    <script type="module" src="students.js"></script>
+</body>
+</html>

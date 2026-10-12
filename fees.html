@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Management | Girls Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>Girls Hostel Management</h1>
+            <p>Fees Management System</p>
+        </div>
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+    <main class="container">
+        <!-- Dashboard Cards -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Fees</h3>
+                <p id="totalFees">₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Collected Fees</h3>
+                <p id="collectedFees">₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Fees</h3>
+                <p id="pendingFees">₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+        </section>
+        <!-- Fees Form -->
+        <section class="form-section">
+            <h2 id="formTitle">Add Student Fees</h2>
+            <form id="feesForm">
+                <input type="hidden" id="editId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="studentName">Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter student name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input
+                            type="text"
+                            id="studentId"
+                            placeholder="Enter student ID"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number</label>
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            placeholder="Enter room number"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalAmount">Total Fees (₹)</label>
+                        <input
+                            type="number"
+                            id="totalAmount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Enter total fees"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paidAmount">Paid Amount (₹)</label>
+                        <input
+                            type="number"
+                            id="paidAmount"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentDate">Payment Date</label>
+                        <input
+                            type="date"
+                            id="paymentDate"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" required>
+                            <option value="Cash">Cash</option>
+                            <option value="UPI">UPI</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="remaining-preview">
+                    Remaining Fees:
+                    <strong id="remainingPreview">₹0.00</strong>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn">Save Fees</button>
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn"
+                        hidden>
+                        Cancel Edit
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- Search -->
+        <section class="table-section">
+
+            <div class="table-heading">
+                <h2>Student Fees Records</h2>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search name, ID or room...">
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Student ID</th>
+                            <th>Room</th>
+                            <th>Total Fees</th>
+                            <th>Paid</th>
+                            <th>Remaining</th>
+                            <th>Payment Date</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feesTableBody"></tbody>
+<!-- Fees Report Section -->
+<section class="report-section">
+<h2>📊 Fees Reports</h2>
+<div class="report-filters">
+    <div>
+        <label for="reportType">Report Type</label>
+        <select id="reportType">
+            <option value="monthly">Monthly Report</option>
+            <option value="yearly">Yearly Report</option>
+        </select>
+    </div>
+    <div id="monthFilter">
+        <label for="reportMonth">Select Month</label>
+        <select id="reportMonth">
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+    </div>
+    <div>
+        <label for="reportYear">Select Year</label>
+        <select id="reportYear"></select>
+    </div>
+    <button type="button" id="generateReportBtn">
+        Generate Report
+    </button>
+    <button type="button" id="printReportBtn">
+        Print Report
+    </button>
+</div>
+<div class="report-summary">
+    <div class="report-card">
+        <h3>Total Fees</h3>
+        <p id="reportTotalFees">₹0.00</p>
+    </div>
+    <div class="report-card">
+        <h3>Collected Fees</h3>
+        <p id="reportCollectedFees">₹0.00</p>
+    </div>
+    <div class="report-card">
+        <h3>Pending Fees</h3>
+        <p id="reportPendingFees">₹0.00</p>
+    </div>
+</div>
+<h3 class="report-subtitle">Payment Summary</h3>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Payment Date</th>
+                <th>Total Fees</th>
+                <th>Paid Amount</th>
+                <th>Pending Amount</th>
+            </tr>
+        </thead>
+        <tbody id="reportTableBody"></tbody>
+    </table>
+</div>
+<p id="reportEmptyMessage" class="empty-message">
+    No records found for this period.</p>
+</section>
+      </table>
+            </div>
+            <p id="emptyMessage" class="empty-message">
+                No fees records found.
+            </p>
+        </section>
+        <p class="storage-note">
+            Note: Fees records are saved only in this browser using localStorage.
+        </p>
+    </main>
+    <script src="fees.js"></script>
+</body>
+</html>

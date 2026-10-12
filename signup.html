@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Girls Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create Account</h1>
+        <p>Join Girls Hostel Management System</p>
+        <form id="signupForm">
+            <label for="name">Student Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required>
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                minlength="6"
+                required>
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Re-enter your password"
+                minlength="6"
+                required>
+            <button type="submit">Create Account</button>
+            <p id="message" class="message" role="status"></p>
+        </form>
+        <p>
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+        <p>
+        <a href="index.html">Back to Home</a>
+        </p>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

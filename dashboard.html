@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Girls Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>🏠 Girls Hostel</h2>
+        <p class="sidebar-label">MAIN MENU</p>
+        <nav class="sidebar-nav">
+            <a href="index.html">🌐 Homepage</a>
+            <a href="dashboard.html" class="active">📊 Dashboard</a>
+            <a href="students.html">👩‍🎓 Students</a>
+            <a href="rooms.html">🛏️ Rooms</a>
+            <a href="fees.html">💰 Fees</a>
+            <a href="complaints.html">📝 Complaints</a>
+        </nav>
+    <button id="logoutButton" class="logout-button">🚪 Logout</button>
+    </aside>
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to Girls Hostel Management System</p>
+            </div>
+            <div class="profile-box">
+                <div class="profile-icon">👩</div>
+                <div>
+                    <strong id="studentName">Loading...</strong>
+                    <p id="studentRole">Student</p>
+                </div>
+            </div>
+        </header>
+        <!-- Welcome Section -->
+        <section class="welcome-card">
+            <div>
+                <h2>Welcome back! 👋</h2>
+                <p>
+                    Manage hostel information, rooms, fees and complaints
+                    from one place.
+                </p>
+            </div>
+            <div class="welcome-icon">🏠</div>
+        </section>
+        <!-- Statistics -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon purple">👩‍🎓</div>
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+                <span>Registered students</span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon green">🛏️</div>
+                <p>Total Rooms</p>
+                <h2 id="totalRooms">0</h2>
+                <span>Hostel rooms</span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon orange">💰</div>
+                <p>Pending Fees</p>
+                <h2 id="pendingFees">0</h2>
+                <span>Payments pending</span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon pink">📝</div>
+                <p>Complaints</p>
+                <h2 id="totalComplaints">0</h2>
+                <span>Reported complaints</span>
+            </article>
+        </section>
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Quick Actions</h2>
+                <p>Access important hostel features</p>
+            </div>
+            <div class="actions-grid">
+                <a href="students.html" class="action-card">
+                    <span>👩‍🎓</span>
+                    <h3>Manage Students</h3>
+                    <p>View student information</p>
+                </a>
+                <a href="rooms.html" class="action-card">
+                    <span>🛏️</span>
+                    <h3>Manage Rooms</h3>
+                    <p>Check room availability</p>
+                </a>
+                <a href="fees.html" class="action-card">
+                    <span>💳</span>
+                    <h3>Manage Fees</h3>
+                    <p>Track fee payments</p>
+                </a>
+                <a href="complaints.html" class="action-card">
+                    <span>📝</span>
+                    <h3>Complaints</h3>
+                    <p>View and manage complaints</p>
+                </a>
+            </div>
+        </section>
+        <!-- Recent Activity -->
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Recent Activity</h2>
+                <p>Latest hostel updates</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">🔐</div>
+                <div>
+                    <h3>Account Login</h3>
+                    <p id="lastLoginMessage">
+                        Your account information will appear here.
+                    </p>
+                </div>
+            </div>
+        </section>
+<div class="dashboard-card">
+    <h3>💰 Fees Management</h3>
+<p>Manage student fees, payments and pending amounts.</p>
+<a href="fees.html" class="dashboard-btn">
+    Manage Fees
+</a>
+</div>
+  <footer class="dashboard-footer">
+            © 2026 Girls Hostel Management System
+        </footer>
+    </main>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

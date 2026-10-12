@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management | Girls Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>Girls Hostel Management</h1>
+            <p>Complaint Management System</p>
+        </div>
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+    <main class="container">
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Complaints</h3>
+                <p id="totalComplaints">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Complaints</h3>
+                <p id="pendingComplaints">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Resolved Complaints</h3>
+                <p id="resolvedComplaints">0</p>
+            </div>
+        </section>
+        <section class="form-section">
+            <h2>Submit a Complaint</h2>
+            <form id="complaintForm">
+                <div class="form-grid">
+                    <div>
+                     <label for="studentName">Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            required
+                            maxlength="100"
+                            placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label for="studentId">Student ID</label>
+                        <input
+                            type="text"
+                            id="studentId"
+                            required
+                            maxlength="50"
+                            placeholder="Enter student ID"
+                        >
+                    </div>
+                    <div>
+                        <label for="roomNumber">Room Number</label>
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            required
+                            maxlength="30"
+                            placeholder="Enter room number">
+                    </div>
+                    <div>
+                        <label for="complaintCategory">Complaint Category</label>
+                        <select id="complaintCategory" required>
+                            <option value="">Select category</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Cleanliness">Cleanliness</option>
+                            <option value="Food">Food</option>
+                            <option value="Electricity">Electricity</option>
+                            <option value="Water">Water</option>
+                            <option value="Security">Security</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="description-field">
+                    <label for="complaintDescription">
+                        Complaint Description
+                    </label>
+                    <textarea
+                        id="complaintDescription"
+                        rows="4"
+                        required
+                        maxlength="2000"
+                        placeholder="Describe your complaint..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Submit Complaint
+                </button>
+            </form>
+        </section>
+        <section class="table-section">
+            <div class="table-heading">
+                <h2>All Complaints</h2>
+                <input
+                    type="search"
+                    id="searchComplaint"
+                    placeholder="Search complaints...">
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Complaint ID</th>
+                            <th>Student Name</th>
+                            <th>Student ID</th>
+                            <th>Room</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="complaintTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+        <p class="storage-note"> Complaint records are saved in this browser using localStorage.</p>
+    </main>
+    <script src="complaints.js"></script>
+</body>
+</html>
